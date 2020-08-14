@@ -98,9 +98,23 @@
 // console.log(person);
 
 
-let dog;
+// let dog;
 
-console.log(dog);
+// console.log(dog);
 
-const somethingUndefinedExplicitly = null;
-console.log(somethingUndefinedExplicitly);
+// const somethingUndefinedExplicitly = null;
+// console.log(somethingUndefinedExplicitly);
+
+
+let isDrawing = false;
+
+let age = 18;
+const ofAge = age > 19;
+
+console.log(ofAge);
+
+// console.log(age === 100);
+console.log(age === 18);
+
+console.log(10 == "10");
+console.log(10 === "10");
