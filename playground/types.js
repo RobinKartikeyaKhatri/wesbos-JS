@@ -43,32 +43,56 @@
 // const greet = "Hello my name is " + first + " " + middle + " " + last;
 // console.log(greet);
 
-const age = 100;
-const name = "Robin";
+// const age = 100;
+// const name = "Robin";
 
-console.log(typeof age);
-console.log(typeof name);
+// console.log(typeof age);
+// console.log(typeof name);
 
 
-const a = 10;
-const b = 20;
+// const a = 10;
+// const b = 20;
 
-console.log(a + b);
-console.log(a - b);
-console.log(a * b);
-console.log(a / b);
-console.log(a % b);
+// console.log(a + b);
+// console.log(a - b);
+// console.log(a * b);
+// console.log(a / b);
+// console.log(a % b);
 
-console.log(1 +"11");
+// console.log(1 +"11");
 
-// Math methods
+// // Math methods
 
-const number = 125.34;
+// const number = 125.34;
 
-console.log(number);
+// console.log(number);
 
-console.log(Math.floor(number));
-console.log(Math.ceil(number));
-console.log(Math.round(number));
+// console.log(Math.floor(number));
+// console.log(Math.ceil(number));
+// console.log(Math.round(number));
 
-console.log(Math.random());
+// console.log(Math.random());
+
+const person = {
+    name: "Robin",
+    last: "Khatri",
+    age: 100
+}
+
+console.log(typeof person, person);
+
+console.log(person.name);
+console.log(person.last);
+console.log(person.age);
+
+console.log(person["name"]);
+console.log(person["last"]);
+console.log(person["age"]);
+
+person.name = "Shaun";
+
+console.log(person);
+
+person.isCool = true;
+
+console.log(person);
