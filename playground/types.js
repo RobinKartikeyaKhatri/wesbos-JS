@@ -73,26 +73,34 @@
 
 // console.log(Math.random());
 
-const person = {
-    name: "Robin",
-    last: "Khatri",
-    age: 100
-}
+// const person = {
+//     name: "Robin",
+//     last: "Khatri",
+//     age: 100
+// }
 
-console.log(typeof person, person);
+// console.log(typeof person, person);
 
-console.log(person.name);
-console.log(person.last);
-console.log(person.age);
+// console.log(person.name);
+// console.log(person.last);
+// console.log(person.age);
 
-console.log(person["name"]);
-console.log(person["last"]);
-console.log(person["age"]);
+// console.log(person["name"]);
+// console.log(person["last"]);
+// console.log(person["age"]);
 
-person.name = "Shaun";
+// person.name = "Shaun";
 
-console.log(person);
+// console.log(person);
 
-person.isCool = true;
+// person.isCool = true;
 
-console.log(person);
+// console.log(person);
+
+
+let dog;
+
+console.log(dog);
+
+const somethingUndefinedExplicitly = null;
+console.log(somethingUndefinedExplicitly);
