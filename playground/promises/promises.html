@@ -9,6 +9,10 @@
     <script>
         function makePizza(toppings = []) {
             return new Promise(function(resolve, reject) {
+                // reject if people try with pineapple
+                if (toppings.includes("pineapple")) {
+                    reject("Seriously? Get out 🍍");
+                }
                 const amountOfTimeToBake = 500 + (toppings.length * 200);
                 // Wait 1 second for the pizza to cook:
                 setTimeout(function() {
@@ -39,28 +43,45 @@
         
         
         // Run them Concurrently
-        const pizzaPromise1 = makePizza(["ham", "cheese"]);
-        const pizzaPromise2 = makePizza(["hot peppers", "onions", "brinjals", "mashrooms"]);
-        const pizzaPromise3 = makePizza(["ham", "gouda", "parmisan", "feta", "riccoto", "hot peppers", "onions", "brinjals", "booloni", "mashrooms", "mozzarella"]);
-        const pizzaPromise4 = makePizza(["ham", "gouda", "parmisan", "feta", "riccoto", "hot peppers", "onions", "brinjals", "booloni", "mashrooms", "mozzarella", "ham", "gouda", "parmisan", "feta", "riccoto", "hot peppers", "onions", "brinjals", "booloni", "mashrooms", "mozzarella"]);
+        // const pizzaPromise1 = makePizza(["ham", "cheese"]);
+        // const pizzaPromise2 = makePizza(["hot peppers", "onions", "brinjals", "mashrooms"]);
+        // const pizzaPromise3 = makePizza(["ham", "gouda", "parmisan", "feta", "riccoto", "hot peppers", "onions", "brinjals", "booloni", "mashrooms", "mozzarella"]);
+        // const pizzaPromise4 = makePizza(["ham", "gouda", "parmisan", "feta", "riccoto", "hot peppers", "onions", "brinjals", "booloni", "mashrooms", "mozzarella", "ham", "gouda", "parmisan", "feta", "riccoto", "hot peppers", "onions", "brinjals", "booloni", "mashrooms", "mozzarella"]);
         
-        // pizzaPromise1.then(pizza => console.log(pizza));
-        // pizzaPromise2.then(pizza => console.log(pizza));
-        // pizzaPromise3.then(pizza => console.log(pizza));
-        // pizzaPromise4.then(pizza => console.log(pizza));
+        // // pizzaPromise1.then(pizza => console.log(pizza));
+        // // pizzaPromise2.then(pizza => console.log(pizza));
+        // // pizzaPromise3.then(pizza => console.log(pizza));
+        // // pizzaPromise4.then(pizza => console.log(pizza));
 
-        dinnerPromise = Promise.all([pizzaPromise1, pizzaPromise2, pizzaPromise3, pizzaPromise4]);
-        // dinnerPromise.then(pizzas => console.log(pizzas));
-        dinnerPromise.then(function(pizzas) {
-            const [hottie, garbagePail, hamAndCheese] = pizzas;
-            console.log(hottie, garbagePail, hamAndCheese);
-        });
+        // dinnerPromise = Promise.all([pizzaPromise1, pizzaPromise2, pizzaPromise3, pizzaPromise4]);
+        // // dinnerPromise.then(pizzas => console.log(pizzas));
+        // dinnerPromise.then(function(pizzas) {
+        //     const [hottie, garbagePail, hamAndCheese] = pizzas;
+        //     console.log(hottie, garbagePail, hamAndCheese);
+        // });
 
-        const firstPizzaPromise = Promise.race([pizzaPromise1, pizzaPromise2, pizzaPromise3, pizzaPromise4]);
+        // const firstPizzaPromise = Promise.race([pizzaPromise1, pizzaPromise2, pizzaPromise3, pizzaPromise4]);
 
-        firstPizzaPromise.then(pizza => {
-            console.log("You must be hungry here is the first one ready");
-            console.log(pizza);
+        // firstPizzaPromise.then(pizza => {
+        //     console.log("You must be hungry here is the first one ready");
+        //     console.log(pizza);
+        // });
+
+        makePizza(["cheese", "pineapple"])
+            .then(pizza => {
+                console.log(pizza);
+            }).catch(err => {
+                console.log("Oh no...");
+                console.log(err);
+            });
+
+        const pizza1 = makePizza(["pep"]);
+        const pizza2 = makePizza(["pineapple"]);
+
+        const dinnerPromise2 = Promise.allSettled([pizza1, pizza2]);
+
+        dinnerPromise2.then(results => {
+            console.log(results);
         });
 
     </script>
